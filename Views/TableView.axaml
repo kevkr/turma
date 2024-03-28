@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:vm="using:turma.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="turma.Views.TableView">
+	
+	<UserControl.Styles>
+		<Style Selector="Button:pointerover">
+			<Setter Property="Background" Value="LightCyan"></Setter>
+		</Style>
+	</UserControl.Styles>
+
+	<Grid HorizontalAlignment="Center" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,883,Auto" x:Name="TableGrid" Grid.Row="1">
+		<ScrollViewer Grid.Row="0" Grid.Column="1" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left">
+			<WrapPanel x:Name="TabsWrapPanel"></WrapPanel>
+		</ScrollViewer>
+		<DataGrid LoadingRow="dataGrid_LoadingRows" SelectionChanged="OnSelectionChanged" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" x:Name="Table" Height="370" SelectedIndex="{Binding SelectedTableIndex}" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False"></DataGrid>
+		<WrapPanel HorizontalAlignment="Right" Grid.Row="2" Grid.Column="1">
+			<Button Content="Hinzufügen" Click="AddTransition" BorderThickness="0" Background="Transparent">
+				<StackPanel>
+					<Image Source="../Assets/Add.png" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+				</StackPanel>
+			</Button>
+			<Button IsEnabled="False" x:Name="RemoveTransition" Content="Entfernen" Click="RemoveTransition" BorderThickness="0" Background="Transparent">
+				<StackPanel>
+					<Image Source="../Assets/Minus.png" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+				</StackPanel>
+			</Button>
+		</WrapPanel>
+	</Grid>
+
+</UserControl>

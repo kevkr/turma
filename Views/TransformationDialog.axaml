@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="250"
+        MinWidth="250" MinHeight="250"
+		Width="250" Height="250"
+        x:Class="MsgBox.DialogBox" SizeToContent="WidthAndHeight" CanResize="False">
+  <StackPanel HorizontalAlignment="Center">
+    <TextBlock HorizontalAlignment="Center" Name="Text" FontSize="15" Padding="5"/>
+    <StackPanel Margin="5">
+      <CheckBox Name="startingState" Checked="checkBoxHandler" Unchecked="uncheckBoxHandler">Die Turingmaschine kehrt nie in den Ausgangszustand zurück</CheckBox>
+      <CheckBox Name="neverStationary" Checked="checkBoxHandler" Unchecked="uncheckBoxHandler">Der Lese-/Schreibkopf ist nie stationär</CheckBox>
+      <CheckBox Name="noEpsilon" Checked="checkBoxHandler" Unchecked="uncheckBoxHandler">Die Turingmaschine schreibt nie das leere Symbol</CheckBox>
+      <CheckBox Name="leftRightStates" Checked="checkBoxHandler" Unchecked="uncheckBoxHandler">Die Zustandsmenge wird in rechte und linke Zustände unterteilt</CheckBox>
+      <CheckBox Name="mergeAcceptingStates" Checked="checkBoxHandler" Unchecked="uncheckBoxHandler">Die Turingmaschine hat nur einen akzeptierenden Zustand</CheckBox>
+    </StackPanel>
+    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
+      <StackPanel.Styles>
+        <Style Selector="Button">
+          <Setter Property="Margin" Value="5"/>
+        </Style>
+      </StackPanel.Styles>
+      
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             MinHeight="1024"
+             MaxHeight="1024"
+             x:Class="turma.Views.SidebarView">
+
+
+  <StackPanel>
+    <Button IsVisible="True" IsEnabled="{Binding !ShowTable}" Name="OpenPanelButton" Click="OnOpenPanel" Width="25" Height="25" Margin="5,5,5,5" BorderThickness="0" Background="White" HorizontalAlignment="Right" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0,0,0,0">
+      <Image Source="/Assets/img_arrow_left.ico"/>
+    </Button>
+    <Panel IsVisible="False" Name="TransitionSidePanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" Height="1024">
+      <ScrollViewer HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left">
+        <WrapPanel x:Name="TabsWrapPanel" Margin="10, 10, 0, 0"></WrapPanel>
+      </ScrollViewer>
+      <Button Name="ClosePanelButton" Click="OnClosePanel" Width="25" Height="25" Margin="5,5,5,5" BorderThickness="0" Background="White" HorizontalAlignment="Right" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0,0,0,0">
+        <Image Source="/Assets/img_cancel.ico"/>
+      </Button>
+      <ScrollViewer Name="sv" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" BorderThickness="2" BorderBrush="Black" Margin="10,40,0,150">
+        <ListBox Name="TransitionView" Background="White">
+          <TextBlock Name="noTransition" IsVisible="True" Width="250" TextWrapping="WrapWithOverflow">Es wurde kein Übergang ausgewählt. Bitte drücken Sie auf einen Pfeil.</TextBlock>
+        </ListBox>
+      </ScrollViewer>
+      <Button Name="AddTransitionButton" Click="AddTransition" Grid.Column="2" Width="25" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="Transparent" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,35,120" Padding="0,0,0,0">
+        <Image Source="/Assets/Add.png"/>
+      </Button>
+      <Button Name="RemoveTransitionButton" Click="RemoveTransition" Grid.Column="2"  Width="25" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="Transparent" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,120" Padding="0,0,0,0">
+        <Image Source="/Assets/Minus.png"/>
+      </Button>
+    </Panel>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="using:turma.Controls"
+             mc:Ignorable="d" d:DesignWidth="980" d:DesignHeight="400"
+             x:Class="turma.Views.ToolboxDiagram">
+    
+   <Canvas Name="Field" Background="transparent" Height="370" Width="980" ClipToBounds="True" PointerMoved="Field_OnPointerMoved" PointerReleased="Field_OnPointerReleased" KeyDown="Canvas_KeyDown">
+	   <Border Canvas.Right="60" Background="White" BorderBrush="Black" BorderThickness="2,1,1,2" CornerRadius="30,30,30,30" Padding="10,2,10,0">
+       <Grid Name="Toolbox" IsEnabled="True"  Width="150" Height="330" RowDefinitions="60,60,60,60,60" Margin="0, 20, 0, 0"  PointerPressed="SetTogglesToFalse">
+				<Border BorderBrush="Black" BorderThickness="3" CornerRadius="100" Width="60" Height="60" Margin="60,0,0,5"> 
+				        <ToggleButton IsEnabled="true" BorderThickness="3" BorderBrush="Black" Name="EndState" Grid.Row="0" Background="LightBlue" HorizontalAlignment="Center" CornerRadius="50" Height="50" Width="50" Click="Toggle_Click">
+                          <Label Content="End" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                     </ToggleButton>
+			  </Border>
+				
+                <ToggleButton IsEnabled="true" Name="NormalState" BorderThickness="3" BorderBrush="Black" Grid.Row="1" Background="LightGray" HorizontalAlignment="Center" CornerRadius="50" Height="50" Width="50" Click="Toggle_Click" Margin="60,0,0,0"/>
+                <ToggleButton IsEnabled="True" Name="Transition" BorderThickness="3" BorderBrush="Black" Grid.Row="2" Background="Transparent" HorizontalAlignment="Center" CornerRadius="50" Height="50" Width="50" Click="Toggle_Click" Margin="60,0,0,0">
+                     <StackPanel>
+                          <Image Source="../Assets/ArrowRight.png" Height="45" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+                     </StackPanel>
+                </ToggleButton>  
+                <ToggleButton Grid.Row="3" Name="DeleteState" BorderThickness="3" BorderBrush="Black" Background="Red" CornerRadius="50" Height="50" Width="50" HorizontalAlignment="Center" Margin="60,0,0,0" Click="Toggle_Click">
+                     <StackPanel>
+                          <Image Source="../Assets/delete.png" Height="45" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+                     </StackPanel>
+                </ToggleButton>
+                <ToggleButton Grid.Row="4" Name="MoveState" BorderThickness="3" BorderBrush="Black" Background="White" CornerRadius="50" Height="50" Width="50" HorizontalAlignment="Center" Margin="60,0,0,0" Click="Toggle_Click">
+                  <StackPanel>
+                          <Image Source="../Assets/mouse.png" Height="45" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+                  </StackPanel>
+               </ToggleButton>
+
+				<Label Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" Padding="10,0,0,0" FontSize="13">Akzept.</Label>
+				<Label Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" Padding="10,0,0,0" FontSize="13">Zustand</Label>
+				<Label Grid.Column="0" Grid.Row="2" VerticalContentAlignment="Center" Padding="10,0,0,0" FontSize="13">Übergang</Label>
+				<Label Grid.Column="0" Grid.Row="3" VerticalContentAlignment="Center" Padding="10,0,0,0" FontSize="13">Löschen</Label>
+				<Label Grid.Column="0" Grid.Row="4" VerticalContentAlignment="Center" Padding="10,0,0,0" FontSize="13">Bewegen</Label>
+       </Grid>
+	   </Border>
+   </Canvas>
+</UserControl>
+
